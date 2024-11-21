@@ -24,13 +24,13 @@ jobs:
         run: sleep
       
       - name: Test File Exists
-        run: grep -i "dragon" dragon.txt
+        run: grep -i "dragon" dragan.txt
        
     deploy_test_2:
       runs-on: ubuntu-latest
       steps:
         - name: Read File
-          run: cat dragon.txt
+          run: cat dragan.txt
        
         - name: Deploy
           run: echo Deploying ...
