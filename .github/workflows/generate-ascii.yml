@@ -18,6 +18,7 @@ jobs:
               ./ascii-script.sh
       
     test_job_2:
+      needs: ascii_job
       runs-on: ubuntu-latest
       steps:
       - name: Sleep for 10 seconds
@@ -27,6 +28,7 @@ jobs:
         run: grep -i "dragon" dragan.txt
        
     deploy_test_2:
+      needs: test_job_2
       runs-on: ubuntu-latest
       steps:
         - name: Read File
