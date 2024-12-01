@@ -16,13 +16,21 @@ jobs:
           run: | 
               chmod +x ascii-script.sh
               ./ascii-script.sh
+        
+        - name: Uplaod a dragon text file
+          uses: actions/upload-artifact@v3
+          with: 
+            name: dragon-text-file
+            path: dragan.txt
       
     test_job_2:
       needs: ascii_job
       runs-on: ubuntu-latest
       steps:
-      - name: Sleep for 10 seconds
-        run: sleep
+      - name: Download a dragon text file
+        uses: actions/download-artifact@v3
+        with:
+          name: dragon-text-file
       
       - name: Test File Exists
         run: grep -i "dragon" dragan.txt
@@ -31,6 +39,11 @@ jobs:
       needs: test_job_2
       runs-on: ubuntu-latest
       steps:
+       - name: Download a dragon text file
+         uses: actions/download-artifact@v3
+         with:
+          name: dragon-text-file
+          
         - name: Read File
           run: cat dragan.txt
        
