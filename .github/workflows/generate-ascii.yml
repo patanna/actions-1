@@ -22,33 +22,33 @@ jobs:
           with: 
             name: dragon-text-file
             path: dragan.txt
+        
+      test_job_2:
+        needs: ascii_job
+        runs-on: ubuntu-latest
+        steps:
+        - name: Download a dragon text file
+          uses: actions/download-artifact@v3
+          with:
+            name: dragon-text-file
       
-    test_job_2:
-      needs: ascii_job
-      runs-on: ubuntu-latest
-      steps:
-      - name: Download a dragon text file
-        uses: actions/download-artifact@v3
-        with:
-          name: dragon-text-file
-      
-      - name: Test File Exists
-        run: grep -i "dragon" dragan.txt
+        - name: Test File Exists
+          run: grep -i "dragon" dragan.txt
        
-    deploy_test_2:
-      needs: test_job_2
-      runs-on: ubuntu-latest
-      steps:
-       - name: Download a dragon text file
-         uses: actions/download-artifact@v3
-         with:
-           name: dragon-text-file
+      deploy_test_2:
+        needs: test_job_2
+        runs-on: ubuntu-latest
+        steps:
+        - name: Download a dragon text file
+          uses: actions/download-artifact@v3
+          with:
+            name: dragon-text-file
 
-        - name: Read File
-          run: cat dragan.txt
-       
-        - name: Deploy
-          run: echo Deploying ...
+          - name: Read File
+            run: cat dragan.txt
+        
+          - name: Deploy
+            run: echo Deploying ...
        
         
 
