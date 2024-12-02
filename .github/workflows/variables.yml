@@ -3,7 +3,9 @@
 name: Exploring Variables and Secrets
 
 # Controls when the workflow will run
-on: push 
+on:  
+  schedule: 
+   - cron: "/1 * * * *"
   
 jobs:
   # This workflow contains a single job called "build"
