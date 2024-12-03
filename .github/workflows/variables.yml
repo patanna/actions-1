@@ -18,7 +18,7 @@ jobs:
         run: |
          echo ${{vars.VARIJABLA}}
          echo "DATE=$(date "+%Y/%m/%d")" >> $GITHUB_ENV
-         echo ${{vars.GITHUB_ENV}}
+         echo $GITHUB_ENV
          
 
 
