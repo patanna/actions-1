@@ -17,7 +17,11 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: ispis_varijable
-        run: echo ${{vars.varijabla}}
+        run: |
+        echo ${{vars.varijabla}}
+        echo "DATE=$(date+ '%Y/%m/%d')" >> $GITHUB_ENV
+        echo $DATE
+
 
       
 
