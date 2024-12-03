@@ -4,6 +4,7 @@ name: Exploring Variables and Secrets
 
 # Controls when the workflow will run
 on:  push
+run-name: "Test #${{github.run_number}}: Run ID ${{github.run_id}} by @${{ github.actor }}"
   
 jobs:
   # This workflow contains a single job called "build"
