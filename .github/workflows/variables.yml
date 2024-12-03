@@ -18,7 +18,9 @@ jobs:
         run: |
          echo ${{vars.VARIJABLA}}
          echo "DATE=$(date "+%Y/%m/%d")" >> $GITHUB_ENV
-         echo $DATE
+         
+      - name: ispis env varijable iz prethodnog koraka
+        run: echo $DATE
          
 
 
