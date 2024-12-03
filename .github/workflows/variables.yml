@@ -19,8 +19,7 @@ jobs:
       - name: ispis_varijable
         run: |
          echo ${{vars.VARIJABLA}}
-         echo "DATE=$(date +'%Y/%m/%d')" >> $GITHUB_ENV
-         echo $DATE
+         
 
 
       
