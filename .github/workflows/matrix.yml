@@ -3,13 +3,16 @@
 name: Matrix
 
 # Controls when the workflow will run
-on: workflow_dispatch
+on: [workflow_dispatch, push]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
   deploy:
     # The type of runner that the job will run on
+    concurrency:
+     group: grupa
+     cancel-in-progress: true
     strategy:
       fail-fast: false
       max-parallel: 2
