@@ -18,7 +18,7 @@ jobs:
         run: |
          echo ${{vars.VARIJABLA}}
          DATE=$(date "+%Y/%m/%d")
-         echo DATE
+         echo $DATE
          
 
 
