@@ -11,7 +11,8 @@ jobs:
   deploy:
     # The type of runner that the job will run on
     concurrency:
-     cancel-in-progress: true
+     group: grupa
+     #cancel-in-progress: true
     strategy:
       fail-fast: false
       max-parallel: 2
