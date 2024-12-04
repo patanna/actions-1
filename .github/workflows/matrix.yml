@@ -12,7 +12,7 @@ jobs:
     # The type of runner that the job will run on
     concurrency:
      group: grupa
-     #cancel-in-progress: true
+     cancel-in-progress: false
      
     strategy:
       fail-fast: false
